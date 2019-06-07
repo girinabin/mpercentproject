@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>operationalform</title>
+</head>
+<body>
+<h1>operation request</h1>
+<ul>
+  {% for i in post1.all %}
+    <h2>{{ i.firstname }}</h2>
+    <h2>{{ i.lastname }}</h2>
+    <h2>{{ i.department}}</h2>
+    <h2>{{ i.operations}}</h2>
+  {% endfor %}
+</ul>
+</body>
+</html>
