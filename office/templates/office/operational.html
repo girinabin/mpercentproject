@@ -1,3 +1,4 @@
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +7,11 @@
 </head>
 <body>
 <!-- templates/post.html -->
-<h1>Create Post Page</h1>
-<form method='POST' enctype="multipart/form-data">
+<h1>Request Page</h1>
+<form method='POST' autocomplete="off" >
   {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit" value='Save'>Submit New Post</button>
+  {{ form|crispy  }}
+  <button type="submit" value='Save'>Request</button>
 </form>
 
 </body>

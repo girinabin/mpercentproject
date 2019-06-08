@@ -1,15 +1,10 @@
 from django.shortcuts import render
-from .models import post
-from .forms import OperationRequest
-# Create your views here.
+from .forms import Postform
 def add_request(request):
-    form = OperationRequest()
     if request.method == 'POST':
-        form = OperationRequest(request.POST,request.FILES)#request.FILES must important
+        form = Postform(request.POST)
         if form.is_valid():
             form.save()
-    return render(request,'office/operational.html',{'form': form})
-
-def home(request):
-    poost = post.objects
-    return render(request,'office/home.html',{'post1':poost})
+    else:
+        form = Postform()
+    return render(request,'office/base.html',{'form': form})
